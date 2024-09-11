@@ -1,11 +1,15 @@
-body h1 {
+h1 {
     font-family: sans-serif;
 }
-
-
 body {
+    font-family: sans-serif;
     background-color: teal;
     color: white;
     text-align: center;
     vertical-align: middle;
+}
+
+.test {
+    font-family: sans-serif;
+    color: blue;
 }
