@@ -43,8 +43,12 @@ body {
 
 /* Navbar settings */
 
-.local {
+.local > li {
     background-color: grey;
+    font-style: italic;
+}
+.web > li {
+    background-color: goldenrod;    
 }
 .navbar > li {                  /* button settings */
     list-style-type: none;      /* disable bullets */
@@ -52,7 +56,6 @@ body {
     height: 30px;
     border: solid 1px black;
     border-radius: 10px;
-    background-color: goldenrod;
     margin: 5px;
     text-align: center;
     line-height: 30px;
