@@ -40,13 +40,6 @@ header > ol > li {
     justify-content: center;
 }
 
-/* Body settings */
-body {
-    background-color: goldenrod;
-    color: white;
-    text-align: center;
-    vertical-align: middle;
-}
 /* Section settings */
 
 /* Navbar settings */
@@ -80,3 +73,7 @@ body {
     
 }
 
+
+table, th, td {
+    border:1px solid black;
+}
