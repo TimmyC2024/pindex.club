@@ -1,6 +1,6 @@
 <?php
 
-    if ($local == "local") {
+    if ($local == "localhost") {
         // Options for running on localhost
         $href1 = "../www/";
         $href2 = "../p10/";
@@ -17,11 +17,11 @@
 ?>
 <header>
     
-        <?php if ($local == "local") {
+        <?php if ($local == "localhost") {
             echo '<ul class="'
         ?>
         <?php 
-            echo $local == "local" ? "local" : "web" 
+            echo $local == "localhost" ? "local" : "web" 
         ?> 
         <?php 
             echo 'navbar flex_container">';

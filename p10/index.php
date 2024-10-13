@@ -1,11 +1,15 @@
-<?php 
+<?php
 
-$connection = require_once './assets/php/Connection.php';
-$database = 'p10';
-// mysqli_select_db( $connection, $database);
-$barcodes = $connection->getBarcodes();
-$barcode = $connection->getBarcode(152419);
+include_once './assets/php/host.php';
 
+try {
+    $connection = require_once './assets/php/Connection.php';
+    echo "<p class='debug'>Connection succeeded</p>";
+} catch (Exception $e) {
+    echo "<p class='debug'>Connection failed: " . $e->getMessage() . "</p>";
+}
+
+    $barcodes = $connection->getBarcodes();
 ?>
 
 <!DOCTYPE html>
@@ -33,29 +37,32 @@ $barcode = $connection->getBarcode(152419);
     <?php include_once './assets/php/header.php';?>
 
     <h1>P-index = 10+</h1>
-
-    <table>
-        <tr>
-            <th>Barcode</th>
-            <th>Name</th>
-            <th>P-index</th>
-            <th>Number for next</th>
-            <th>Last checked</th>
-            <th>Next check</th>
-            <th>Notes</th>
-        </tr>
-        <?php foreach ($barcodes as $barcode): ?>
+    <div class="center">
+        <table>
             <tr>
-                <td><?php echo $barcode['pindex']?></td>
-                <td><?php echo $barcode['barcode']?></td>
-                <td><?php echo $barcode['name']?></td>
-                <td><?php echo $barcode['number for next']?></td>
-                <td><?php echo $barcode['last checked']?></td>
-                <td><?php echo $barcode['next check']?></td>
-                <td><?php echo $barcode['notes']?></td>
+                <th>Barcode</th>
+                <th>Name</th>
+                <th>P-index</th>
+                <th>Number for next</th>
+                <th>Last checked</th>
+                <!-- <th>Next check</th>
+                <th>Notes</th> -->
             </tr>
-        <?php endforeach; ?>
-    </table>
-
+            <?php foreach ($barcodes as $barcode): ?>
+                <tr>
+                    <td><?php echo $barcode['pindex']?></td>
+                    <td><?php echo $barcode['barcode']?></td>
+                    <td><?php echo $barcode['name']?></td>
+                    <td><?php echo $barcode['number for next']?></td>
+                    <!-- FIXME: -->
+                    <!-- TODO: -->
+                    
+                    <td><?php echo substr($barcode['last checked'],0,10)?></td>
+                    <!-- <td><?php echo $barcode['next check']?></td>
+                    <td><?php echo $barcode['notes']?></td> -->
+                </tr>
+            <?php endforeach; ?>
+        </table>
+    </div>
 </body>
 </html>
