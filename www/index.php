@@ -7,7 +7,7 @@
     <script src="./assets/javascript/script.js" async defer></script>
     <script> window.name = "pindex" </script>
     <?php include_once '../www/assets/php/host.php' ?>
-    
+    <base href="pindex/pindex.club/"
     <!-- https://favicon.io/favicon-generator/ -->
         <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png">
